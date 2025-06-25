@@ -1,0 +1,27 @@
+{
+    "name": "laravel-ux/errors",
+    "description": "Errors for the Laravel UX.",
+    "keywords": ["laravel", "tailwind", "livewire"],
+    "license": "MIT",
+    "require": {
+        "php": "^8.2",
+        "livewire/livewire": "^3.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelUx\\Errors\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LaravelUx\\Errors\\ErrorsServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
