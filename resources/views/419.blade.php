@@ -1,6 +1,5 @@
-<x-ux.layouts::error
-    code="419"
-    :title="__('Page Expired')"
-    :message="__('The page expired due to inactivity. Please try again.')"
-/>
+@extends('errors::layout')
 
+@section('title', __('Page Expired'))
+@section('code', '419')
+@section('message', __('The page expired due to inactivity. Please try again.'))

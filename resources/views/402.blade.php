@@ -1,6 +1,6 @@
-<x-ux.layouts::error
-    code="402"
-    :title="__('Payment Required')"
-    :message="__('Payment is required to proceed.')"
-/>
+@extends('errors::layout')
+
+@section('title', __('Payment Required'))
+@section('code', '402')
+@section('message', __('Payment is required to proceed.'))
 

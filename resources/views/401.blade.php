@@ -1,6 +1,5 @@
-<x-ux.layouts::error
-    code="401"
-    :title="__('Unauthorized')"
-    :message="__('You need to log in to access this page.')"
-/>
+@extends('errors::layout')
 
+@section('title', __('Unauthorized'))
+@section('code', '401')
+@section('message', __('You need to log in to access this page.'))

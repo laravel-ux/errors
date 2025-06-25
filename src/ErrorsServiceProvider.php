@@ -12,9 +12,4 @@ class ErrorsServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ExceptionHandler::class, Handler::class);
     }
-
-    public function boot(): void
-    {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'ux.errors');
-    }
 }

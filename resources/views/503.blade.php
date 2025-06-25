@@ -1,6 +1,6 @@
-<x-ux.layouts::error
-    code="503"
-    :title="__('Service Unavailable')"
-    :message="__('The service is temporarily unavailable. Please try again later.')"
-/>
+@extends('errors::layout')
+
+@section('title', __('Service Unavailable'))
+@section('code', '503')
+@section('message', __('The service is temporarily unavailable. Please try again later.'))
 
