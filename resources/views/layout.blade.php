@@ -19,7 +19,7 @@
             </p>
             <div class="mt-6">
                 <x-ux::button href="{{ config('app.url') }}">
-                    {{ __('Go to Homepage') }}
+                    @lang('Go to Homepage')
                 </x-ux::button>
             </div>
         </div>
