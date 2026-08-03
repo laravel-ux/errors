@@ -12,4 +12,15 @@ class ErrorsServiceProvider extends ServiceProvider
     {
         $this->app->singleton(ExceptionHandler::class, Handler::class);
     }
+
+    public function boot(): void
+    {
+        if (! $this->app->runningInConsole()) {
+            return;
+        }
+
+        $this->publishes([
+            __DIR__.'/../resources/views' => resource_path('views/errors'),
+        ], 'laravel-ux-errors');
+    }
 }
