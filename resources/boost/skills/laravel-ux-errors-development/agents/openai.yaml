@@ -1,0 +1,4 @@
+interface:
+  display_name: "Laravel UX Errors"
+  short_description: "Build and customize Laravel HTTP error pages"
+  default_prompt: "Use $laravel-ux-errors-development to customize the HTTP error handling and pages in my Laravel application."

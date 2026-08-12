@@ -1,10 +1,12 @@
 {
     "name": "laravel-ux/errors",
-    "description": "Errors for the Laravel UX.",
-    "keywords": ["laravel", "tailwind", "livewire"],
+    "description": "Polished, customizable HTTP error pages for Laravel.",
+    "keywords": ["errors", "laravel", "tailwind"],
     "license": "MIT",
     "require": {
-        "php": "^8.2"
+        "php": "^8.3",
+        "laravel/framework": "^13.0",
+        "laravel/head": "^0.1"
     },
     "autoload": {
         "psr-4": {

@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="h-full">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', config('app.name'))</title>
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
+    <meta charset="utf-8" />
+    @head
+    @fonts
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-background text-foreground">
-    <div class="flex min-h-[100dvh] flex-col items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
+<body class="bg-background text-foreground min-h-full font-sans antialiased">
+    <main class="flex min-h-dvh items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-md text-center">
-            <h1 class="mt-4 text-6xl font-bold tracking-tight text-foreground sm:text-7xl">
+            <h1 class="text-6xl font-semibold tracking-[-0.05em] sm:text-7xl">
                 @yield('code')
             </h1>
-            <p class="mt-4 text-lg text-muted-foreground" >
+            <p class="text-muted-foreground mt-4 text-base leading-7">
                 @yield('message')
             </p>
-            <div class="mt-6">
-                <x-ux::button href="{{ config('app.url') }}">
-                    @lang('Go to Homepage')
-                </x-ux::button>
-            </div>
+            <a
+                href="{{ url('/') }}"
+                class="bg-foreground text-background focus-visible:ring-ring focus-visible:ring-offset-background mt-6 inline-flex h-10 items-center justify-center rounded-md px-4 text-sm font-medium transition-opacity hover:opacity-80 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+            >
+                @lang('Go to homepage')
+            </a>
         </div>
-    </div>
+    </main>
 </body>
 </html>
