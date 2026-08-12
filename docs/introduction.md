@@ -44,3 +44,9 @@ Generic `4xx` and `5xx` views cover every other client and server error.
 
 The layout uses your application's Vite entrypoints, color tokens, and default font configured through `@fonts`.
 It does not require Laravel UX UI, so error rendering remains self-contained.
+
+## Head metadata
+
+The shared layout uses Laravel Head to render the error title, viewport, and non-indexable robots metadata. Global
+head defaults from the application continue to apply, including title prefixes or suffixes, icons, and theme
+metadata.

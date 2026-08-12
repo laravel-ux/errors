@@ -28,6 +28,9 @@ Laravel UX Errors preserves Laravel's conventional `errors` namespace:
 Application views always take precedence. Do not replace the package exception handler or view-path registration
 for ordinary customization.
 
+The package exception handler also passes the HTTP status to Laravel Head before rendering. Preserve this behavior
+when changing package internals so `Head::errors()` metadata resolves for the active status.
+
 The package includes dedicated views for `401`, `402`, `403`, `404`, `419`, `429`, `500`, and `503`, plus generic
 `4xx` and `5xx` fallbacks.
 
@@ -58,8 +61,10 @@ Published views belong to the application. Do not edit files in `vendor`.
 - Load the consuming application's standard Vite entrypoints.
 - Use `@fonts` and `font-sans` so the page follows the application's configured default family.
 - Use application color tokens such as `background`, `foreground`, and `muted-foreground`.
+- Keep only the `@head` rendering directive in the layout; register metadata outside Blade.
+- Configure error metadata through `Head::errors()` in a service provider.
+- Keep the package's default viewport and `noindex, nofollow` robots metadata for every error page.
 - Keep the page useful when JavaScript is unavailable.
-- Preserve the `noindex, nofollow` robots directive.
 - Link the recovery action to `url('/')`, not a hardcoded deployment URL.
 
 ## Error Messages
@@ -95,6 +100,7 @@ behavior under test.
 
 - Confirm the expected status-specific or family fallback view is selected.
 - Verify application overrides win over package views.
+- Verify application-defined `Head::errors()` metadata overrides the package's runtime defaults.
 - Check light and dark tokens, the configured font, responsive centering, and keyboard focus.
 - Confirm `5xx` output contains no internal exception details.
 - Run PHP formatting, the focused feature test, and the frontend build when layout classes change.

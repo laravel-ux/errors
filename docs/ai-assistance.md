@@ -11,6 +11,7 @@ The `laravel-ux-errors-development` skill provides package-specific guidance for
 - Resolving dedicated status views and generic `4xx` or `5xx` fallbacks.
 - Publishing views through Laravel's native vendor publishing workflow.
 - Customizing the shared layout without introducing a UI package dependency.
+- Preserving Laravel Head metadata and application-defined error metadata overrides.
 - Keeping server error messages free of exception details.
 - Testing the rendered error response instead of bypassing the exception handler.
 

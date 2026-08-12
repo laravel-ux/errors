@@ -41,6 +41,26 @@ Create a status-specific application view whenever a response needs different co
 @section('message', __('This endpoint cannot brew coffee.'))
 ```
 
+## Head metadata
+
+The package registers default titles and descriptions for every included status through Laravel Head. Generic
+errors receive safe fallback metadata, and every error page is excluded from indexing. Configure status-specific
+metadata in the application's service provider when different values are needed:
+
+```php
+use Laravel\Head\ErrorPages;
+use Laravel\Head\Facades\Head;
+
+Head::errors(function (ErrorPages $errors) {
+    $errors->status(404,
+        title: 'Project Not Found',
+        description: 'The requested project could not be found.',
+    );
+});
+```
+
+Status-specific metadata defined by the application takes precedence over the package defaults.
+
 ## Testing
 
 Assert the response status and visible content in a feature test:

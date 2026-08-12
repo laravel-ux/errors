@@ -38,7 +38,8 @@ The view may extend the package layout:
 
 After publishing, edit `resources/views/errors/layout.blade.php` to change the structure shared by every status
 page. The default layout intentionally uses plain Blade and HTML instead of package components, keeping fatal error
-rendering independent from the UI package.
+rendering independent from the UI package. Keep the `@head` directive, or provide equivalent title, viewport, and
+robots metadata in the replacement layout.
 
 ## Publish package updates
 
