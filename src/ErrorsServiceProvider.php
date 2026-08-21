@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelUx\Errors;
 
 use Illuminate\Contracts\Debug\ExceptionHandler;
@@ -17,11 +19,12 @@ class ErrorsServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        $this->configureHead();
+
         if (! $this->app->runningInConsole()) {
             return;
         }
 
-        $this->configureHead();
         $this->publishes([
             __DIR__.'/../resources/views' => resource_path('views/errors'),
         ], 'laravel-ux-errors');
