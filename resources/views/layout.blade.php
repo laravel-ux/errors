@@ -9,6 +9,9 @@
 <body class="bg-background text-foreground min-h-full font-sans antialiased">
     <main class="flex min-h-dvh items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
         <div class="mx-auto max-w-md text-center">
+            <p class="text-muted-foreground text-sm font-medium">
+                @yield('title')
+            </p>
             <h1 class="text-6xl font-semibold tracking-[-0.05em] sm:text-7xl">
                 @yield('code')
             </h1>

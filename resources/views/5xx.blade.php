@@ -1,5 +1,5 @@
 @extends('errors::layout')
 
-@section('title', __('Server Error'))
+@section('title', __('Something Went Wrong'))
 @section('code', $exception->getStatusCode())
-@section('message', __('Something went wrong while processing your request.'))
+@section('message', __('The request could not be completed.'))
